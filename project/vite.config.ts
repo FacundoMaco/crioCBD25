@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+          vendor: ['react', 'react-dom'],
           icons: ['lucide-react']
         },
         assetFileNames: 'assets/[name]-[hash][extname]',
@@ -25,7 +25,7 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: ['react', 'react-dom']
   },
   server: {
     port: 3000,

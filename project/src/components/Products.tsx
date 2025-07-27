@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Star, MessageCircle, Award, Leaf, Shield } from 'lucide-react';
 import { Product } from '../types/Product';
 
@@ -226,12 +225,17 @@ const Products: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link 
-            to="/products"
+          <button 
+            onClick={() => {
+              const element = document.querySelector('#products');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className="inline-block bg-white border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-emerald-500 hover:text-white transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Ver Todos los Productos
-          </Link>
+          </button>
         </div>
       </div>
     </section>
