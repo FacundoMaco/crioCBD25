@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Shield, Leaf, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 const heroProducts = [
@@ -100,14 +99,19 @@ const Hero: React.FC = () => {
             {/* CTA Section with Enhanced Design */}
             <div className="space-y-6 pt-4">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <Link 
-                  to="/products"
+                <button 
+                  onClick={() => {
+                    const element = document.querySelector('#products');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="group relative bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-semibold text-lg hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                   <span className="relative z-10">Descubre tu Alternativa</span>
                   <ArrowRight className="relative z-10 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                </Link>
+                </button>
                 
                 <button className="group border-2 border-stone-300 text-stone-700 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-semibold text-lg hover:border-emerald-500 hover:text-emerald-600 hover:bg-emerald-50/50 transition-all duration-300 backdrop-blur-sm">
                   <span className="group-hover:scale-105 transition-transform duration-200 inline-block">
@@ -228,7 +232,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Custom CSS for animation delays */}
-      <style jsx>{`
+      <style>{`
         .animation-delay-1000 {
           animation-delay: 1s;
         }
