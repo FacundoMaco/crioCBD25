@@ -4,12 +4,16 @@ import Benefits from '../components/Benefits';
 import Products from '../components/Products';
 import Testimonials from '../components/Testimonials';
 import About from '../components/About';
-import Newsletter from '../components/Newsletter';
+import FAQ from '../components/FAQ';
+import Contact from '../components/Contact';
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
+      
       <section className="relative isolate overflow-hidden py-20 md:py-28">
         {/* Natural Texture Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-stone-50 via-amber-50/20 to-emerald-50/30"></div>
@@ -102,11 +106,25 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      <Benefits />
-      <Products />
-      <Testimonials />
-      <About />
-      <Newsletter />
+      
+      <section id="benefits">
+        <Benefits />
+      </section>
+      
+      <section id="products">
+        <Products />
+      </section>
+      
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+      
+      <section id="about">
+        <About />
+      </section>
+      
+      <FAQ />
+      <Contact />
     </>
   );
 };
